@@ -1,0 +1,112 @@
+/**
+* Le CSS de notre formulaire sur notre home page
+*/
+
+.form-text {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form-inner {
+    position: relative;
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.contact-form-item {
+    margin-bottom: 1rem;
+}
+
+.contact-form-item > span {
+    display: block;
+}
+
+.contact-form-inner .contact-form-item-half {
+    width: calc(50% - 7.5px); 
+}
+
+@media(max-width: 768px) {
+    .contact-form-inner .contact-form-item-half {
+        width: 100%; 
+    }
+}
+
+.contact-form-item > span > input {
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 1.5em;
+    padding: 0.5rem 1rem;
+}
+
+.contact-form-item-label {
+    margin-bottom: 0.5rem;
+    color: #BBB
+}
+
+.contact-form-inner textarea {
+    width: 100%;
+}
+
+.contact-form-item-full {
+    width: 100%;
+}
+
+.contact-form-inner input, .contact-form-inner textarea {
+    box-sizing: border-box;
+    background-color: #BBB;
+    outline: none;
+    border: none;
+}
+
+.contact-form-inner input:focus, .contact-form-inner textarea:focus {
+    background-color: #FFF;
+    outline: none;
+}
+
+.contact-form-submit {
+    position: relative;
+    width: 100%;
+    text-align: right;
+}
+
+.contact-form-inner input[type=submit] {
+    outline: none;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    margin: 1rem 0; 
+    background-color: #36707C;
+    color: #FFF;
+    transition: 0.3s background-color ease;
+    cursor: pointer;
+}
+
+.contact-form-inner input[type=submit]:hover {
+    background-color: #D85547;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    background-color: #D85547;
+    border: none;
+    color: #FFF;
+    padding: 0.5rem;
+}
+
+.wpcf7 .ajax-loader {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 12px)
+}

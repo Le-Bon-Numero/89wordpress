@@ -1,0 +1,193 @@
+/**
+* Le css de base de notre site
+*
+* Green: #36707C
+* Red:   #D85547
+* Grey:  #444444 (ou abrégé #444)
+* White: #FFFFFF
+* Black: #000000
+*/
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #444;
+    font-size: 14px;
+    background-color: #FFF;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+    color: #444;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Ce css permet de cacher visuellement le texte utile aux lecteurs d'écrans
+* (outil utilisé par les mal-voyants pour lire une page web)
+* Le texte est lisible par le lecteur d'écran mais invisible à l'écran
+*/
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	word-break: normal;
+}
+
+.main-content {
+    padding-top: 65px;
+}
+
+.text-large-section {
+    max-width: 1200px;
+}
+
+.text-medium-section {
+    max-width: 900px;
+}
+
+.text-large-section,
+.text-medium-section {
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+/* Pour rappel, une media-query permet de cibler un type d'affichage pour permettre un rendu différent.
+C'est ainsi que notre site est rendu responsive.
+Dans ce corrigé, nous utilisons un seul point de rupture (breakpoint) à 768px.
+On peut tout â fait en imaginer d'autres pour avoir un rendu encore plus personnalisé (et ainsi obtenir un rendu différent sur smartphone, tablette et ordinateur) */
+@media(max-width: 768px) {
+    .text-large-section,
+    .text-medium-section {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+.image-header-wrapper {
+    height: 70vh;
+    position: relative;
+}
+
+@media(max-width: 768px) {
+    .image-header-wrapper {
+        height: 30vh;
+    }
+}
+
+.image-header {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+@media(max-width: 768px) {
+    .image-header {
+        height: 30vh;
+    }
+}
+
+.image-header-overlay {
+    position: absolute;
+    z-index: 2;
+    background-color: #000;
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.image-header-punchline {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: #FFF;
+    font-size: 4rem;
+    font-weight: 700;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.not-found{
+    text-align: center;
+}
+
+.not-found a {
+    color: #36707C;
+}
+
+.not-found a:hover {
+    color: #D85547;
+}
+
+@media(max-width: 768px) {
+    .image-header-punchline {
+        font-size: 2rem;
+    }
+}
+
+/*
+* Styling des titres avec les barres stylisées rouges et bleues dessous
+*/
+
+.title-bar {
+    font-weight: 100;
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+    padding-bottom: 9rem;
+    padding-top: 6rem;
+    padding-right: 8px;
+    padding-left: 8px;
+    text-transform: uppercase;
+}
+
+@media(max-width: 768px) {
+    .title-bar {
+        font-size: 1.5rem;
+    }
+}
+
+/* Niveau plus avancé 
+::before et ::after sont appelés des pseudo-éléments.
+Ils permettent d'inclure un contenu généralement esthétique à l'élément ciblé */
+.title-bar::before,
+.title-bar::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    bottom: 6rem;
+    height: 4px;
+}
+
+.title-bar::before {
+    background-color: #36707C;
+    right: 50%;
+}
+
+.title-bar::after {
+    background-color: #D85547;
+    left: 50%
+}

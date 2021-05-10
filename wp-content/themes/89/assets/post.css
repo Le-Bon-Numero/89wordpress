@@ -1,0 +1,17 @@
+/**
+* Le CSS spécifique d'un article standard (qui se base en grande partie sur le style des pages par défaut)
+*/
+
+.title-bar {
+    text-transform: capitalize;
+}
+
+.post-date {
+    font-weight: 400;
+    color: #D85547;
+}
+
+.page-content.post h4 {
+    margin-top: 0.8rem;
+    margin-bottom: 2rem;
+}

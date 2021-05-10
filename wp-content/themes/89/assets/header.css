@@ -1,0 +1,122 @@
+/**
+* Le CSS de notre header par défaut
+* Il est complété par le fichier header-mobile.css pour stylisé le menu hamburger sur petites résolutions
+*/
+
+/* On occulte l'icone de menu burger */
+#menu-burger, .overlay-header {
+    display: none;
+}
+
+.header {
+    height: 65px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+    box-sizing: border-box;
+    padding: 0 5vw;
+}
+
+.custom-logo-link {
+    display: block;
+    height: 35px;
+}
+
+.custom-logo {
+    height: 100%;
+    width: auto;
+}
+
+/* Les règles en-dessous de ce point permettent la stylisation du menu principal */
+.header-menu-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.header-menu-inner li {
+    padding: 0;
+    margin-left: 2rem;
+    list-style: none;
+    position: relative;
+    display: block;
+}
+
+/* Niveau plus avancé : 
+on affiche une petite ligne rouge qui se découvre progressivement grâce à une "transition" au survol du lien du menu.
+::before est un "pseudo-élément" permettant de définir un élément à rajouter. */
+.header-menu-inner li::before {
+    position: absolute;
+    content: '';
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background-color: #D85547;
+    transform-origin: 50%;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    z-index: 1;
+}
+
+/* Niveau plus avancé : 
+La pseudo-classe :not() s'applique à tous les sélecteurs définis sauf ceux ciblés par le sélecteur présent dans la parenthèse.
+Ici, on sélectionne nos éléments "li" de notre menu, sauf le dernier (last-child)*/
+
+.header-menu-inner li:not(:last-child):hover::before {
+    transform: scaleX(1);
+}
+
+.header-menu-inner li.current-menu-item:not(:last-child) {
+    pointer-events: none;
+}
+
+.header-menu-inner li.current-menu-item:not(:last-child)::before {
+    background-color: #36707C;
+    transform: scaleX(1);
+}
+
+.header-menu-inner li > * {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #36707C;
+    text-transform: uppercase;
+    padding: 0.3rem;
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+/*  Niveau plus avancé : 
+Les prochaines règles s'applique seulement au dernier élément de notre menu (grâce au pseudo
+"Contact" est en effet un lien que l'on a souhaité stylisé différemment des autres */
+.header-menu-inner li:last-child {
+    background-color: #36707C;
+    border: 1px solid #36707C;
+    transition: background-color 0.3s;
+}
+
+.header-menu-inner li:last-child:hover {
+    background-color: #FFF;
+}
+
+.header-menu-inner li:last-child > * {
+    color: #FFF;
+    transition: color 0.3s;
+    padding: 0.3rem 1.3rem;
+}
+
+.header-menu-inner li:last-child:hover > * {
+    color: #36707C;
+}

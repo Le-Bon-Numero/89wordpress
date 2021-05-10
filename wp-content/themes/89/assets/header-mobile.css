@@ -1,0 +1,73 @@
+/*
+* Ce CSS est utilisé pour styler le menu burger
+* quand l'écran a une largeur inférieur à 768px
+*/
+
+@media(max-width: 768px) {
+    #menu-burger {
+        display: block;
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+        width: 20px;
+        filter: invert(35%) sepia(62%) saturate(371%) hue-rotate(143deg) brightness(95%) contrast(86%);
+        transition: 0.5s filter ease-in-out;
+    }
+
+    /* Cette classe "open", non-présent à l'ouverture de la page, est rajouté 
+    par le biais de notre fichier script.js au clic sur l'icone burger */
+    #menu-burger.open {
+        filter: invert(37%) sepia(76%) saturate(487%) hue-rotate(318deg) brightness(104%) contrast(100%);
+    }
+
+    .custom-logo-link {
+        height: 20px;
+        z-index: 3;
+    }
+
+    /* En position "menu fermé", cet overlay nous permet de cacher le menu*/
+    .overlay-header {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 2;
+    }
+
+    .header-nav {
+        position: fixed;
+        top: 65px;
+        left: 0;
+        right: 0;
+        transform: translateY(-100%);
+        transition: 0.5s transform ease-in-out;
+        box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+        z-index: 1;
+    }
+
+    /* Cette classe "open", non-présente à l'ouverture de la page, est rajoutée
+    par le biais de notre fichier script.js au clic sur l'icone burger */
+    .header-nav.open {
+        transform: translateY(0%);
+    }
+
+    .header-menu-inner {
+        flex-direction: column;
+        background-color: #FFF;
+        padding-bottom: 2rem;
+    }
+
+    .header-menu-inner li {
+        margin: 0.5rem;
+    }
+
+    .header-menu-inner li:last-child {
+        margin-top: 1rem;
+    }
+
+}

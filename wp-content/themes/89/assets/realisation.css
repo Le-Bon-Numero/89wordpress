@@ -1,0 +1,73 @@
+/* Ce fichier permet de styliser nos pages "réalisations" */
+
+/* Niveau plus avancé :
+le pseudo-sélecteur :nth-child permet de sélectionner un élément particulier  */
+.realisation-part:nth-child(odd) {
+    background-color: #333;
+}
+
+.realisation-part-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.realisation-part:nth-child(odd) .realisation-part-inner{
+    flex-direction: row-reverse;
+}
+
+.realisation-part .illustration,
+.realisation-part .editor-content {
+    width : 100%;
+}
+
+.realisation-part .editor-content h4 {
+    margin-top: 0;
+}
+
+.realisation-part .editor-content {
+    padding-right: 2rem;
+    box-sizing: border-box;
+}
+
+.realisation-part:nth-child(odd) .editor-content {
+    padding-right: 0;
+    padding-left: 2rem;
+}
+
+.realisation-part:nth-child(odd) .editor-content h4 {
+    color: #D85547;
+}
+
+.realisation-part:nth-child(odd) .editor-content p {
+    color: #FFF;
+}
+
+
+.realisation-part .illustration img {
+    width: 100%;
+}
+
+@media(max-width: 768px) {
+    .realisation-part .realisation-part-inner,
+    .realisation-part:nth-child(odd) .realisation-part-inner{
+        flex-direction: column;
+    }
+
+    .realisation-part .illustration {
+        height: 30vh;
+    }
+    
+    .realisation-part .illustration img {
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .realisation-part:nth-child(odd) .editor-content,
+    .realisation-part .editor-content {
+        text-align: center;
+        padding: 0 2rem 2rem 2rem;
+    }
+}

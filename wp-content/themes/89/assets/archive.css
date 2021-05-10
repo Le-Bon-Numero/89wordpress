@@ -1,0 +1,108 @@
+/**
+* Le CSS de notre page de blog, qui liste les articles, également valide pour notre listing des réalisations
+*/
+
+.archive-content {
+    margin: 0 auto;
+    padding-bottom: 9rem;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.post_item {
+    display: flex;
+    align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+}
+
+@media(max-width: 768px) {
+    .post_item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.post_thumbnail {
+    padding-right: 4rem;
+}
+
+@media(max-width: 768px) {
+    .post_thumbnail {
+        padding-right: 0;
+    }
+}
+
+.post_thumbnail img{
+    border-radius: 50%;
+}
+
+.post_description h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #36707C;
+    padding-bottom: 0.3rem;
+}
+
+.post_description h3 {
+    font-size: .9rem;
+    line-height: .9rem;
+    vertical-align: middle;
+    color: #D85547;
+}
+
+.post_description .icon {
+    width: .6rem;
+}
+
+.post_description p {
+    margin: 1rem 0;
+    font-size: .8rem;
+    line-height: 1.5rem;
+}
+
+.post_description a {
+    display: inline-block;
+    color: #36707C;
+    padding: 0.3rem 1rem;
+    border: solid 1px #36707C;
+    background-color: transparent;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.post_description a:hover {
+    color: #FFF;
+    padding: 0.3rem 1rem;
+    background-color: #36707C;
+    border: solid 1px #36707C;
+}
+
+/*
+* Navigation numérotée de bas de page
+*/
+
+.pagination{
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.page-numbers{
+    background-color: #36707C;
+    color: #FFF;
+    padding: 0.2rem 0.5rem;
+    border: solid 1px #36707C;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+}
+
+.page-numbers.current {
+    background-color: #FFF;  
+    color: #36707C;  
+}
+
+.page-numbers:not(.current):hover {
+    background-color: #FFF;  
+    border: solid 1px #FFF;
+    color: #36707C;
+}

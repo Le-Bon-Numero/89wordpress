@@ -1,0 +1,36 @@
+/**
+* Le CSS d'une page par défaut
+*/
+.page-subtitle {
+    font-weight: 300;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    padding-top: 0;
+    padding-right: 8px;
+    padding-left: 8px;
+    letter-spacing: 0.15rem;
+}
+
+@media(max-width: 768px) {
+    .page-subtitle {
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+    }
+}
+
+.page-content {
+    margin: 0 auto;
+    padding-bottom: 9rem;
+
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+@media(max-width: 768px) {
+    .page-content {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}

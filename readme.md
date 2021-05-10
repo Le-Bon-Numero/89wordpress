@@ -1,5 +1,5 @@
 # Corrigé TD Wordpress pour l'école 89
-## Vous trouverez ici les resources nécessaire pour réaliser un site sous wordpress avec ACF
+## Vous trouverez ici les ressources nécessaires pour réaliser un site sous wordpress avec ACF
 
 ---
 

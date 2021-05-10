@@ -31,5 +31,5 @@ la version du fichier à charger dépend de votre serveur apache.
 
 Se connecter à son espace via http://localhost/wp-admin (avec le port en plus si besoin)
 
-Identifiant : ecole89
-Mot de passe : ecole89
+Identifiant : ecole89<br />
+Mot de passe : ecole89<br />
